@@ -5,8 +5,6 @@ in order to eliminate the dependencies on the rails-specific stuff.
 
     map '/assets' do
       env = Sprockets::Environment.new
-      env.register_engine '.ls', LiveScript::TiltTemplate
-
       env.append_path 'assets/js'
 
       run env
