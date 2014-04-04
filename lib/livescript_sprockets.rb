@@ -6,7 +6,7 @@ module LiveScript
   # http://gkz.github.com/LiveScript/
   #
   # LiveScript templates do not support object scopes, locals, or yield.
-  class TiltTemplate < Tilt::Template
+  class Template < Tilt::Template
     self.default_mime_type = 'application/javascript'
 
     @@default_bare = false
@@ -52,3 +52,5 @@ module LiveScript
   end
 end
 
+Tilt.register 'ls',              LiveScript::Template
+Sprockets.register_engine '.ls', LiveScript::Template
